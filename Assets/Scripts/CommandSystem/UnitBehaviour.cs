@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitBehaviour : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UnitBehaviour : MonoBehaviour
     private Command _currentCommand;
 
     private SpriteRenderer _spriteRenderer;
+
 
     Camera _camera;
 
@@ -46,9 +48,18 @@ public class UnitBehaviour : MonoBehaviour
                 new Vector3(UnityEngine.Random.Range(200, Screen.width - 200),
                 UnityEngine.Random.Range(200, Screen.height - 200),
                 _camera.nearClipPlane));
-            var moveCommand = new MoveCommand(point, UnityEngine.Random.Range(4f, 8f), transform, _spriteRenderer);
+            var moveCommand = new MoveCommand(point, UnityEngine.Random.Range(6f, 10f), transform, _spriteRenderer);
             _commands.Enqueue(moveCommand);
 
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            var standingCommand = new StandingCommand(UnityEngine.Random.Range(2f, 5f));
+            _commands.Enqueue(standingCommand);
+        }else if (Input.GetKeyDown(KeyCode.W))
+        {
+            var flipperCommand = new FlipperCommand(_spriteRenderer, UnityEngine.Random.Range(1f, 3f));
+            _commands.Enqueue(flipperCommand);
         }
     }
 }

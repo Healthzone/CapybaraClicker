@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MoveCommand : Command
 {
@@ -10,6 +11,8 @@ public class MoveCommand : Command
     private readonly Transform _target;
     private readonly SpriteRenderer _spriteRenderer;
     private readonly float _speed;
+
+
 
     public MoveCommand(Vector3 destination, float speed, Transform target, SpriteRenderer spriteRenderer)
     {
@@ -26,9 +29,12 @@ public class MoveCommand : Command
         else
             _spriteRenderer.flipX = false;
 
+        //_agent.SetDestination(_destination);
+
         _target.DOMove(_destination, _speed).OnComplete(() =>
         {
             IsFinished = true;
         });
     }
+
 }
