@@ -19,7 +19,8 @@ public class FlipperCommand : Command
         sequence
             .OnStepComplete(FlipSprite)
             .AppendInterval(_flippingTime)
-            .SetLoops(6, LoopType.Incremental)
+            .SetLoops(4, LoopType.Incremental)
+            .AppendInterval(3f)
             .OnComplete(() =>
             {
                 IsFinished = true;

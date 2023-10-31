@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6546441700854485379}
   - component: {fileID: 8110612209714543995}
   - component: {fileID: 2388315572957740466}
+  - component: {fileID: 501717896038703638}
   m_Layer: 0
   m_Name: Capybara6
   m_TagString: Untagged
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &2388315572957740466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,3 +98,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4626f6d73717be340a6c74795c54c3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &501717896038703638
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250878555035739665}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 986eea74b915ac849970e4399fe9828e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 986eea74b915ac849970e4399fe9828e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
