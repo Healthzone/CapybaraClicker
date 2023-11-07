@@ -6,14 +6,14 @@ public class MoveCommand : Command
 {
 
     private readonly Vector3 _destination;
-    private readonly UnityEngine.Transform _target;
+    private readonly Transform _target;
     private readonly SpriteRenderer _spriteRenderer;
     private readonly float _speed;
     private readonly CapybaraData _capybaraData;
 
 
 
-    public MoveCommand(Vector3 destination, float speed, UnityEngine.Transform target, SpriteRenderer spriteRenderer)
+    public MoveCommand(Vector3 destination, float speed, Transform target, SpriteRenderer spriteRenderer)
     {
         _destination = destination;
         _target = target;

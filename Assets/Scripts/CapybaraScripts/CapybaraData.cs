@@ -13,4 +13,8 @@ public class CapybaraData : ScriptableObject
     public float LowerYPosition = -2.45f;
 
     public float UpperYPosition = 0.15f;
+
+    public string StringConnection = string.Empty;
+
+    public string Username = string.Empty;
 }
