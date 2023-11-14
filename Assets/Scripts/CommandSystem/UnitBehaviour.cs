@@ -45,18 +45,17 @@ public class UnitBehaviour : MonoBehaviour
 
         _currentCommand = _commands.Dequeue();
         _currentCommand.Execute();
-        Debug.Log("Executing command");
     }
 
     private void ListenForCommands()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Adding move command");
+            var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.2f));
+            var heightScreenPos = UnityEngine.Random.Range(Screen.height * 0.13f, Screen.height * 0.395f);
             Vector3 point = _camera.ScreenToWorldPoint(
-                new Vector3(UnityEngine.Random.Range(200, Screen.width - 200),
-                UnityEngine.Random.Range(140, 425),
-                _camera.nearClipPlane));
+            new Vector3(widthScreenPos,heightScreenPos, _camera.nearClipPlane));
+            Debug.Log("Adding move command: " + widthScreenPos + "/" + heightScreenPos);
             var moveCommand = new MoveCommand(point, UnityEngine.Random.Range(8f, 12f), transform, _spriteRenderer);
             _commands.Enqueue(moveCommand);
 
@@ -83,7 +82,7 @@ public class UnitBehaviour : MonoBehaviour
         if (_commands.Count > 6)
             yield return null;
 
-        _randomNumber = UnityEngine.Random.Range(0, 3);
+        _randomNumber = UnityEngine.Random.Range(0, 4);
 
         switch (_randomNumber)
         {
@@ -96,10 +95,11 @@ public class UnitBehaviour : MonoBehaviour
                 _commands.Enqueue(flipperCommand);
                 break;
             case 2:
+            case 3:
+                var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.2f));
+                var heightScreenPos = UnityEngine.Random.Range(Screen.height * 0.13f, Screen.height * 0.395f);
                 Vector3 point = _camera.ScreenToWorldPoint(
-                new Vector3(UnityEngine.Random.Range(200, Screen.width - 200),
-                UnityEngine.Random.Range(140, 425),
-                _camera.nearClipPlane));
+                new Vector3(widthScreenPos, heightScreenPos, _camera.nearClipPlane));
                 var moveCommand = new MoveCommand(point, UnityEngine.Random.Range(8f, 12f), transform, _spriteRenderer);
                 _commands.Enqueue(moveCommand);
                 break;
