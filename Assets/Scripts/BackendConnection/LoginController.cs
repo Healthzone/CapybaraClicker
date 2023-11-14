@@ -1,5 +1,6 @@
 using Assets.ModelsDTO;
 using Cysharp.Threading.Tasks;
+using System;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -76,12 +77,12 @@ public class LoginController : MonoBehaviour
                 _validationLabel.text = "Сервер не отвечает";
                 _validationLabel.color = Color.red;
             }
-
         }
     }   
     private void SaveSessionState()
     {
-        SessionState.SetBool("IsAuth", true);
+        PlayerPrefs.SetInt("IsAuth", 1);
+        PlayerPrefs.SetString("AuthDuration", DateTime.Now.AddDays(1).ToString());
         PlayerPrefs.SetString("Login", _nicknameField.text);
 
         if (_rememberMeToggle.isOn)
@@ -109,11 +110,8 @@ public class LoginController : MonoBehaviour
         }
     }
 
-    private void LoadGame()
+    public void LoadGame()
     {
         SceneManager.LoadScene("GameScene");
     }
-
-    
-
 }

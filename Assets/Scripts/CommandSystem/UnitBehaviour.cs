@@ -71,7 +71,7 @@ public class UnitBehaviour : MonoBehaviour
             _commands.Enqueue(flipperCommand);
         }
 
-        //StartCoroutine(UnitCommandProvider());
+        StartCoroutine(UnitCommandProvider());
 
     }
 

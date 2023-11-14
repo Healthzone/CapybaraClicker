@@ -29,7 +29,7 @@ public class MenuUI : MonoBehaviour
     }
     public void OpenLoginView()
     {
-        //CheckIsUserLogged();
+        CheckIsUserLogged();
 
         if (ServerConnectionViewGameObject != null && LoginViewGameObject != null)
         {
@@ -40,8 +40,13 @@ public class MenuUI : MonoBehaviour
 
     private void CheckIsUserLogged()
     {
-        if (SessionState.GetBool("IsAuth", false))
-            SceneManager.LoadScene("GameScene");
+        if (PlayerPrefs.GetInt("IsAuth", 0) == 1)
+        {
+            var datetime = DateTime.Parse(PlayerPrefs.GetString("AuthDuration", DateTime.MinValue.ToString()));
+
+            if (datetime >= DateTime.Now)
+                SceneManager.LoadScene("GameScene");
+        }
     }
 
     public void OpenRegisterView()

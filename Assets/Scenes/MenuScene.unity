@@ -750,10 +750,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1162853805}
-    - target: {fileID: 1714597478257089743, guid: 224ff11c73a70f54e8922918f87119cd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenLoginView
-      objectReference: {fileID: 0}
     - target: {fileID: 2905519396165178579, guid: 224ff11c73a70f54e8922918f87119cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -838,6 +834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Title_Popup_Checking
       objectReference: {fileID: 0}
+    - target: {fileID: 8513711997901821070, guid: 224ff11c73a70f54e8922918f87119cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1162853802}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
