@@ -33,6 +33,4 @@ public static class IntToStringConverter
                 .Append(nStringFormat[num]).ToString();
         //return value.ToString("D1") + nStringFormat[num];
     }
-
-
 }

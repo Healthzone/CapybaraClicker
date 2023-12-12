@@ -11,7 +11,7 @@ public class ScoreData : MonoBehaviour
     private void Start()
     {
         var idleScoreString = PlayerPrefs.GetString("IdleScore", "1");
-        var clickScoreString = PlayerPrefs.GetString("ClickScore", "100");
+        var clickScoreString = PlayerPrefs.GetString("ClickScore", "1");
         var currentScoreString = PlayerPrefs.GetString("CurrentScore", "0");
 
         IdleScore = BigInteger.Parse(idleScoreString);

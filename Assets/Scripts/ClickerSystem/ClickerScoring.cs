@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,8 @@ using UnityEngine.EventSystems;
 
 public class ClickerScoring : MonoBehaviour
 {
+    public static event Action PlayerClicked; 
+
     [SerializeField]
     private Camera mainCamera;
 
@@ -19,6 +22,7 @@ public class ClickerScoring : MonoBehaviour
     public void Click(BaseEventData data)
     {
         scoreData.CurrentScore += scoreData.ClickScore;
+        PlayerClicked?.Invoke();
 
         var labelTextGameObject = ClickLabelObjectPool.SharedInstance.GetPooledObject();
         if(labelTextGameObject != null )

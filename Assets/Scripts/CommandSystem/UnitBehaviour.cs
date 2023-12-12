@@ -96,7 +96,7 @@ public class UnitBehaviour : MonoBehaviour
                 break;
             case 2:
             case 3:
-                var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.2f));
+                var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.24f));
                 var heightScreenPos = UnityEngine.Random.Range(Screen.height * 0.13f, Screen.height * 0.395f);
                 Vector3 point = _camera.ScreenToWorldPoint(
                 new Vector3(widthScreenPos, heightScreenPos, _camera.nearClipPlane));
