@@ -5,7 +5,6 @@ public class ScoreData : MonoBehaviour
 {
     public BigInteger IdleScore;
     public BigInteger ClickScore;
-
     public BigInteger CurrentScore;
 
     private void Start()
@@ -17,5 +16,12 @@ public class ScoreData : MonoBehaviour
         IdleScore = BigInteger.Parse(idleScoreString);
         ClickScore = BigInteger.Parse(clickScoreString);
         CurrentScore = BigInteger.Parse(currentScoreString);
+    }
+
+    public void SaveScoreData()
+    {
+        PlayerPrefs.SetString("IdleScore", IdleScore.ToString());
+        PlayerPrefs.SetString("ClickScore", ClickScore.ToString());
+        PlayerPrefs.SetString("CurrentScore", CurrentScore.ToString());
     }
 }

@@ -14,7 +14,6 @@ public class LevelUI : MonoBehaviour
 
     private void Awake()
     {
-        ClickerScoring.PlayerClicked += UpdateClickUI;
         levelMananger = GetComponent<LevelMananger>();
         StartCoroutine(UpdateUIAtFirst());
     }
@@ -24,9 +23,10 @@ public class LevelUI : MonoBehaviour
         UpdateClickUI();
     }
 
-    private void UpdateClickUI()
+    public void UpdateClickUI()
     {
-        levelSlider.value = (float)levelMananger.clicksCurrent / levelMananger.clickAmount;
+        var value = (float)levelMananger.clicksCurrent / levelMananger.clickAmount;
+        levelSlider.value = value == 1f ? 0 : value;
         levelLabel.text = levelMananger.capybaraLevel.ToString();
     }
 }

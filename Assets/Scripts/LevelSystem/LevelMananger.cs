@@ -14,6 +14,8 @@ public class LevelMananger : MonoBehaviour
     [SerializeField]
     private int clickAmountMultiplier = 2;
 
+    private LevelUI levelUI;
+
     private void Awake()
     {
         capybaraLevel = PlayerPrefs.GetInt("CapybaraLevel", 1);
@@ -21,6 +23,7 @@ public class LevelMananger : MonoBehaviour
     }
     private void Start()
     {
+        levelUI = GetComponent<LevelUI>();
         ClickerScoring.PlayerClicked += Click;
         CalculateClicksAmount();
     }
@@ -39,9 +42,11 @@ public class LevelMananger : MonoBehaviour
     private void Click()
     {
         clicksCurrent++;
+        levelUI.UpdateClickUI();
         if (clicksCurrent >= clickAmount)
         {
             capybaraLevel++;
+            levelUI.UpdateClickUI();
             CalculateClicksAmount();
             SaveClicksData();
             clicksCurrent = 0;
