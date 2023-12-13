@@ -21,9 +21,13 @@ public class ConnectionChecker : MonoBehaviour
     private TextMeshProUGUI serverStatusLabel;
 
     private CapybaraData _capybaraData;
+
+    private string ipAddress;
     private async void Start()
     {
         _capybaraData = Resources.Load<CapybaraData>("CapybaraData");
+        ipAddress = PlayerPrefs.GetString("IP", _capybaraData.StringConnection);
+        _capybaraData.StringConnection = ipAddress;
         await CheckConnection();
     }
 
@@ -32,9 +36,13 @@ public class ConnectionChecker : MonoBehaviour
         await UniTask.Delay(TimeSpan.FromSeconds(3), ignoreTimeScale: false);
         try
         {
-            var request = await UnityWebRequest.Get(_capybaraData.StringConnection + "Auth/check")
+            var request = await UnityWebRequest.Get(_capybaraData.StringConnection + "/api/Auth/check")
                 .SendWebRequest()
                 .WithCancellation(this.GetCancellationTokenOnDestroy());
+
+            //var request = await UnityWebRequest.Get(ipAddress + "/api/Auth/check")
+            //   .SendWebRequest()
+            //   .WithCancellation(this.GetCancellationTokenOnDestroy());
 
             if (request.result == UnityWebRequest.Result.Success)
             {

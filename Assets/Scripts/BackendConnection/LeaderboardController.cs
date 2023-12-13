@@ -37,7 +37,7 @@ public class LeaderboardController : MonoBehaviour
         };
         try
         {
-            var request = await UnityWebRequest.Post(_capybaraData.StringConnection + "Home/addResult", leaderboardModel.ToString(), "application/json")
+            var request = await UnityWebRequest.Post(_capybaraData.StringConnection + "/api/Home/addResult", leaderboardModel.ToString(), "application/json")
                 .SendWebRequest()
                 .WithCancellation(this.GetCancellationTokenOnDestroy());
 
@@ -60,7 +60,7 @@ public class LeaderboardController : MonoBehaviour
     {
         try
         {
-            var request = await UnityWebRequest.Get(_capybaraData.StringConnection + "Home/getTopPlayers")
+            var request = await UnityWebRequest.Get(_capybaraData.StringConnection + "/api/Home/getTopPlayers")
                 .SendWebRequest()
                 .WithCancellation(this.GetCancellationTokenOnDestroy());
 

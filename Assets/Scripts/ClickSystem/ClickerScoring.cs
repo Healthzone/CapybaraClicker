@@ -15,14 +15,12 @@ public class ClickerScoring : MonoBehaviour
 
     private ScoreData scoreData;
 
-    private int clicks;
     private void Start()
     {
         scoreData = GetComponent<ScoreData>();
     }
     public void Click(BaseEventData data)
     {
-        Debug.Log(++clicks);
         scoreData.CurrentScore += scoreData.ClickScore;
         PlayerClicked?.Invoke();
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,12 +20,18 @@ public class MenuUI : MonoBehaviour
     [SerializeField]
     private GameObject ServerConnectionViewGameObject;
 
+    [SerializeField]
+    private GameObject TestViewGameObject;
+
+    [SerializeField]
+    private TMP_InputField testIpField;
+
     public void SkipTitle()
     {
         if (TitleViewGameObject != null && ServerConnectionViewGameObject != null)
         {
             TitleViewGameObject.SetActive(false);
-            ServerConnectionViewGameObject.SetActive(true);
+            TestViewGameObject.SetActive(true);
         }
     }
     public void OpenLoginView()
@@ -35,6 +42,18 @@ public class MenuUI : MonoBehaviour
         {
             ServerConnectionViewGameObject.SetActive(false);
             LoginViewGameObject.SetActive(true);
+        }
+    }
+
+    public void CloseTestWindow()
+    {
+        var tmp = testIpField.text;
+        if (tmp != string.Empty)
+            PlayerPrefs.SetString("IP", testIpField.text);
+        if (ServerConnectionViewGameObject != null && TestViewGameObject != null)
+        {
+            TestViewGameObject.SetActive(false);
+            ServerConnectionViewGameObject.SetActive(true);
         }
     }
 

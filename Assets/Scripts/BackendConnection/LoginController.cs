@@ -50,7 +50,7 @@ public class LoginController : MonoBehaviour
 
         try
         {
-            var request = await UnityWebRequest.Post(_capybaraData.StringConnection + "Auth/login", loginModel.ToString(), "application/json")
+            var request = await UnityWebRequest.Post(_capybaraData.StringConnection + "/api/Auth/login", loginModel.ToString(), "application/json")
                 .SendWebRequest()
                 .WithCancellation(this.GetCancellationTokenOnDestroy());
 

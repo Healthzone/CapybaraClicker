@@ -50,7 +50,7 @@ public class RegisterController : MonoBehaviour
 
         try
         {
-            var request = await UnityWebRequest.Post(_capybaraData.StringConnection + "Auth/register", registerModel.ToString(), "application/json")
+            var request = await UnityWebRequest.Post(_capybaraData.StringConnection + "/api/Auth/register", registerModel.ToString(), "application/json")
                 .SendWebRequest()
                 .WithCancellation(this.GetCancellationTokenOnDestroy());
 

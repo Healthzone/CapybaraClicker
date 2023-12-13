@@ -10,9 +10,9 @@ public class LevelMananger : MonoBehaviour
     public int capybaraLevel = 1;
 
     [SerializeField]
-    private int clickAmountBase = 300;
+    private float clickAmountBase = 300;
     [SerializeField]
-    private int clickAmountMultiplier = 2;
+    private float clickAmountMultiplier = 2;
 
     private LevelUI levelUI;
 
@@ -30,7 +30,7 @@ public class LevelMananger : MonoBehaviour
 
     private void CalculateClicksAmount()
     {
-        clickAmount = capybaraLevel * (clickAmountBase * clickAmountMultiplier);
+        clickAmount = capybaraLevel * (int)(clickAmountBase * clickAmountMultiplier);
     }
 
     private void SaveClicksData()

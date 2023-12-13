@@ -14,6 +14,7 @@ public class IdleScoring : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         scoreData.CurrentScore += scoreData.IdleScore;
+        ShopSystem.OnUINeedUpdated?.Invoke();
         StartCoroutine(IdleScore());
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShopSystem : MonoBehaviour
 {
-    public static event Action OnUINeedUpdated;
+    public static Action OnUINeedUpdated;
     [SerializeField]
     private ScoreData scoreData;
     private void Start()
