@@ -16,4 +16,5 @@ MonoBehaviour:
   UpperScaleLimit: 0.2
   LowerYPosition: -2.45
   UpperYPosition: 0.15
-  StringConnection: https://localhost:7122/api/
+  StringConnection: https://localhost:7122
+  Username: 

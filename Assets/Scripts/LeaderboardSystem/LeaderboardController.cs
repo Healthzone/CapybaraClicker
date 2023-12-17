@@ -5,22 +5,23 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using Assets.ModelsDTO;
+using System.Collections.Generic;
 
 public class LeaderboardController : MonoBehaviour
 {
     private CapybaraData _capybaraData;
 
     [SerializeField]
-    private TMP_InputField _label;
+    private ScoreData scoreData;
 
     void Start()
     {
         _capybaraData = Resources.Load<CapybaraData>("CapybaraData");
     }
 
-    public async void StartGettingLeaderboardTop()
+    public async UniTask<LeaderboardsTop> StartGettingLeaderboardTop()
     {
-        await GetLeaderboardTop();
+        return await GetLeaderboardTop();
     }
 
     public async void StartSettingLeaderboardValue()
@@ -28,13 +29,10 @@ public class LeaderboardController : MonoBehaviour
         await SetLeaderboardTopValue();
     }
 
-    private async UniTask SetLeaderboardTopValue()
+    private async UniTask<bool> SetLeaderboardTopValue()
     {
-        var leaderboardModel = new LeaderboardModel()
-        {
-            Username = PlayerPrefs.GetString("Login", ""),
-            Score = long.Parse(_label.text)
-        };
+        var leaderboardModel = new User(PlayerPrefs.GetString("Login", ""), (long)scoreData.CurrentScore);
+
         try
         {
             var request = await UnityWebRequest.Post(_capybaraData.StringConnection + "/api/Home/addResult", leaderboardModel.ToString(), "application/json")
@@ -44,19 +42,22 @@ public class LeaderboardController : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log(request.downloadHandler.text);
+                return true;
             }
             else
             {
 
             }
+            return false;
         }
         catch (UnityWebRequestException ex)
         {
             Debug.Log(ex.Message);
+            return false;
         }
     }
 
-    private async UniTask GetLeaderboardTop()
+    private async UniTask<LeaderboardsTop> GetLeaderboardTop()
     {
         try
         {
@@ -66,7 +67,7 @@ public class LeaderboardController : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log(request.downloadHandler.text);
+                return JsonUtility.FromJson<LeaderboardsTop>(request.downloadHandler.text);
             }
             else
             {
@@ -77,5 +78,6 @@ public class LeaderboardController : MonoBehaviour
         {
             Debug.Log(ex.Message);
         }
+        return null;
     }
 }
