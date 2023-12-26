@@ -32,9 +32,11 @@ public class MoveCommand : Command
         var scale = InterpolateUnitScale();
 
         var ct = _target.GetCancellationTokenOnDestroy();
+
         await UniTask.WhenAll(
             _target.DOMove(_destination, _speed).WithCancellation(ct),
-            _target.DOScale(scale, _speed).WithCancellation(ct));
+            _target.DOScale(scale, _speed).WithCancellation(ct)
+            );
 
         IsFinished = true;
     }
