@@ -31,7 +31,7 @@ public class MenuUI : MonoBehaviour
         if (TitleViewGameObject != null && ServerConnectionViewGameObject != null)
         {
             TitleViewGameObject.SetActive(false);
-            TestViewGameObject.SetActive(true);
+            ServerConnectionViewGameObject.SetActive(true);
         }
     }
     public void OpenLoginView()
