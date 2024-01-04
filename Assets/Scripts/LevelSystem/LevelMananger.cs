@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using YG;
 
 public class LevelMananger : MonoBehaviour
 {
@@ -14,15 +16,42 @@ public class LevelMananger : MonoBehaviour
     [SerializeField]
     private float clickAmountMultiplier = 2;
 
+    [SerializeField]
+    private float timeDelay;
+
     private LevelUI levelUI;
 
-    private void Awake()
-    {
-        capybaraLevel = PlayerPrefs.GetInt("CapybaraLevel", 1);
-        clicksCurrent = PlayerPrefs.GetInt("ClicksCurrent", 0);
-    }
+
+    private void OnEnable() => YandexGame.GetDataEvent += InitLevelData;
+
+    private void OnDisable() => YandexGame.GetDataEvent -= InitLevelData;
+
     private void Start()
     {
+        if (YandexGame.SDKEnabled)
+        {
+            InitLevelData();
+        }
+        StartCoroutine(SaveCurrentClicksAmount());
+    }
+
+    private IEnumerator SaveCurrentClicksAmount()
+    {
+        yield return new WaitForSeconds(timeDelay);
+        if (YandexGame.SDKEnabled)
+        {
+            YandexGame.savesData.clicksCurrent = clicksCurrent;
+            YandexGame.SaveProgress();
+        }
+        StartCoroutine(SaveCurrentClicksAmount());
+
+    }
+
+    private void InitLevelData()
+    {
+        capybaraLevel = YandexGame.savesData.capybaraLevel;
+        clicksCurrent = YandexGame.savesData.clicksCurrent;
+
         levelUI = GetComponent<LevelUI>();
         ClickerScoring.PlayerClicked += Click;
         CalculateClicksAmount();
@@ -35,7 +64,9 @@ public class LevelMananger : MonoBehaviour
 
     private void SaveClicksData()
     {
-        PlayerPrefs.SetInt("CapybaraLevel", capybaraLevel);
+        YandexGame.savesData.capybaraLevel = capybaraLevel;
+        YandexGame.SaveProgress();
+        //PlayerPrefs.SetInt("CapybaraLevel", capybaraLevel);
         // PlayerPrefs.SetInt("ClicksCurrent", clicksCurrent);
     }
 

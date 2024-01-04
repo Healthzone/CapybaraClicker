@@ -18,13 +18,13 @@ public class ShopSystem : MonoBehaviour
         switch (item.ItemType)
         {
             case ItemShopType.Click:
-                scoreData.ClickScore += BigInteger.Parse(item.ItemShopProfit);
+                scoreData.ScoreDataBase.ClickScore += ulong.Parse(item.ItemShopProfit);
                 break;
             case ItemShopType.AutoClick:
-                scoreData.IdleScore += BigInteger.Parse(item.ItemShopProfit);
+                scoreData.ScoreDataBase.IdleScore += ulong.Parse(item.ItemShopProfit);
                 break;
         }
-        scoreData.CurrentScore -= item.ItemCost;
+        scoreData.ScoreDataBase.CurrentScore -= item.ItemCost;
         scoreData.SaveScoreData();
         OnUINeedUpdated?.Invoke();
     }

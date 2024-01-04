@@ -26,13 +26,7 @@ public class IdleScoreUILabel : MonoBehaviour
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
-            textMeshProUGUI.SetText(IntToStringConverter.Int2String(scoreData.IdleScore));
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            scoreData.IdleScore += 25;
+            textMeshProUGUI.SetText(IntToStringConverter.Int2String(scoreData.ScoreDataBase?.IdleScore ?? 0L));
         }
     }
 }

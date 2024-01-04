@@ -1,12 +1,7 @@
-﻿using Assets.ModelsDTO;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
-using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
 
 public class UnitBehaviour : MonoBehaviour
 {
@@ -29,7 +24,6 @@ public class UnitBehaviour : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         Vector3 screenPos = _camera.WorldToScreenPoint(new Vector3(0.4f, -2.45f, 0));
-        Debug.Log(screenPos);
     }
     public void Update()
     {

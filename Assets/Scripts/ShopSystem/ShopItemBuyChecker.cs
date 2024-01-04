@@ -11,6 +11,7 @@ public class ShopItemBuyChecker : MonoBehaviour
 
     private ShopItem shopItem;
     private Button itemButton;
+
     private void Start()
     {
         shopItem = GetComponent<ShopItem>();
@@ -21,7 +22,7 @@ public class ShopItemBuyChecker : MonoBehaviour
 
     public void CheckItemBuyAbility()
     {
-        if (scoreData.CurrentScore >= shopItem.ItemCost)
+        if (scoreData.ScoreDataBase.CurrentScore >= shopItem.ItemCost)
         {
             itemButton.interactable = true;
         }

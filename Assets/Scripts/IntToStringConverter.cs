@@ -7,16 +7,16 @@ public static class IntToStringConverter
     private static List<string> nStringFormat = new List<string>()
     {
         "",
-        "K",
-        "M",
-        "B",
-        "T"
+        "עûס.",
+        "לכם.",
+        "לכנה.",
+        "ענכם."
     };
 
-    public static string Int2String(BigInteger value)
+    public static string Int2String(ulong value)
     {
         int num = 0;
-        BigInteger mod;
+        ulong mod = 0;
         while (value >= 1000)
         {
             num++;

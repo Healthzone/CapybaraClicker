@@ -13,7 +13,7 @@ public class CurrentScoreUILabel : MonoBehaviour
     private void Start()
     {
         textMeshProUGUI = GetComponent<TextMeshProUGUI>();
-        textMeshProUGUI.SetText(IntToStringConverter.Int2String(scoreData.CurrentScore));
+        textMeshProUGUI.SetText(IntToStringConverter.Int2String(scoreData.ScoreDataBase?.CurrentScore ?? 0L));
     }
 
     private void Update()
@@ -21,7 +21,7 @@ public class CurrentScoreUILabel : MonoBehaviour
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
-            textMeshProUGUI.SetText(IntToStringConverter.Int2String(scoreData.CurrentScore));
+            textMeshProUGUI.SetText(IntToStringConverter.Int2String(scoreData.ScoreDataBase?.CurrentScore ?? 0L));
         }
     }
 }

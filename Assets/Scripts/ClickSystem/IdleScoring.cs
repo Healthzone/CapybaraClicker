@@ -13,7 +13,7 @@ public class IdleScoring : MonoBehaviour
     private IEnumerator IdleScore()
     {
         yield return new WaitForSeconds(1);
-        scoreData.CurrentScore += scoreData.IdleScore;
+        scoreData.ScoreDataBase.CurrentScore += scoreData.ScoreDataBase.IdleScore;
         ShopSystem.OnUINeedUpdated?.Invoke();
         StartCoroutine(IdleScore());
     }

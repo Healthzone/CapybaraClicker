@@ -1,13 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using System.Numerics;
 
 public class MoneyLabel : MonoBehaviour
 {
     private TextMeshProUGUI textMeshProUGUI;
-    private long score;
+    private ulong score;
 
     private float nextActionTime = 0.0f;
     public float period = 0.1f;
@@ -15,9 +13,9 @@ public class MoneyLabel : MonoBehaviour
     private void Start()
     {
         textMeshProUGUI = GetComponent<TextMeshProUGUI>();
-        var bigInteger = new BigInteger();
-        bigInteger = BigInteger.Parse(textMeshProUGUI.text);
-        textMeshProUGUI.SetText(IntToStringConverter.Int2String(bigInteger));
+        var uLong = new ulong();
+        uLong = ulong.Parse(textMeshProUGUI.text);
+        textMeshProUGUI.SetText(IntToStringConverter.Int2String(uLong));
     }
 
     private void Update()
@@ -25,9 +23,8 @@ public class MoneyLabel : MonoBehaviour
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
-            score+=100;
-            var bigInteger = new BigInteger(score);
-            textMeshProUGUI.SetText(IntToStringConverter.Int2String(bigInteger));
+            score += 100;
+            textMeshProUGUI.SetText(IntToStringConverter.Int2String(score));
         }
     }
 

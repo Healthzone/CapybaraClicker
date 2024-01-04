@@ -1,19 +1,17 @@
 using Assets.Scripts.ShopSystem;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class ShopItem : MonoBehaviour, IShopItem
 {
     public static event Action<ShopItem> OnShopItemClick;
 
     public string ItemName { get => itemName; }
-    public BigInteger ItemCost { get => itemCost; }
+    public ulong ItemCost { get => itemCost; }
     public int ItemLevel { get => itemLevel; }
-    public BigInteger ItemBaseCost { get => BigInteger.Parse(itemBaseCost); }
+    public ulong ItemBaseCost { get => ulong.Parse(itemBaseCost); }
     public ItemShopType ItemType { get => itemType; }
     public string ItemShopProfit { get => itemShopProfit; }
 
@@ -35,29 +33,50 @@ public class ShopItem : MonoBehaviour, IShopItem
     [SerializeField]
     private TextMeshProUGUI costLabel;
 
-    private BigInteger itemCost;
+    [SerializeField]
+    private ShopItemData shopitemData;
+
+    private ulong itemCost;
     private int itemLevel;
+    private void OnEnable() => YandexGame.GetDataEvent += InitShopItem;
+
+    private void OnDisable() => YandexGame.GetDataEvent -= InitShopItem;
     public void BuyItem()
     {
         OnShopItemClick?.Invoke(this);
         itemLevel++;
         var costMultiplier = Mathf.Pow(this.costMultiplier, itemLevel);
         var itemCostDouble = (double)ItemCost * costMultiplier;
-        itemCost = new BigInteger(itemCostDouble);
+        itemCost = (ulong)itemCostDouble;
         UpdateUI();
         SaveBuyedItem();
     }
 
     public void SaveBuyedItem()
     {
-        PlayerPrefs.SetString(itemName + "Cost", itemCost.ToString());
-        PlayerPrefs.SetString(itemName + "Level", itemLevel.ToString());
+        shopitemData.shopItemDataBase.SetFieldValue(itemName + "Cost", itemCost.ToString());
+        shopitemData.shopItemDataBase.SetFieldValue(itemName + "Level", itemLevel);
+        
+        YandexGame.savesData.shopItemDataJson = shopitemData.shopItemDataBase.ToString();
+        YandexGame.SaveProgress();
     }
 
     public void Start()
     {
-        itemCost = BigInteger.Parse(PlayerPrefs.GetString(itemName + "Cost", itemBaseCost));
-        itemLevel = PlayerPrefs.GetInt(itemName + "Level", 1);
+        if (YandexGame.SDKEnabled)
+        {
+            InitShopItem();
+        }
+    }
+
+    private void InitShopItem()
+    {
+        if (!ulong.TryParse(shopitemData.shopItemDataBase.GetFieldValue<string>(itemName + "Cost"), out itemCost))
+        {
+            itemCost = ulong.Parse(itemBaseCost);
+        }
+
+        itemLevel = shopitemData.shopItemDataBase.GetFieldValue<int>(itemName + "Level");
         UpdateUI();
     }
 

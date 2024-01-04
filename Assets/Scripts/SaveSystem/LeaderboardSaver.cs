@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class LeaderboardSaver : MonoBehaviour
 {
@@ -8,24 +9,18 @@ public class LeaderboardSaver : MonoBehaviour
     private int saveDelay;
 
     [SerializeField]
-    private LeaderboardController controller;
-
-    [SerializeField]
     private ScoreData scoreData;
 
     private void Start()
     {
-        StartCoroutine(TrySaveUserScoreInLeaderboard());
+        StartCoroutine(SaveTotalEarnedScore());
     }
 
-    private IEnumerator TrySaveUserScoreInLeaderboard()
+    private IEnumerator SaveTotalEarnedScore()
     {
         yield return new WaitForSeconds(saveDelay);
-        if (scoreData.NeedToUpdateLeaderboard)
-        {
-            controller.StartSettingLeaderboardValue();
-            scoreData.NeedToUpdateLeaderboard = false;
-        }
-        StartCoroutine(TrySaveUserScoreInLeaderboard());
+        YandexGame.savesData.totalEarnedScore = scoreData.TotalScore;
+        YandexGame.SaveProgress();
+        StartCoroutine(SaveTotalEarnedScore());
     }
 }
