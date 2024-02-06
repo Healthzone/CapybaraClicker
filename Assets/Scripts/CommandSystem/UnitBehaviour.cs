@@ -22,7 +22,6 @@ public class UnitBehaviour : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
         Vector3 screenPos = _camera.WorldToScreenPoint(new Vector3(0.4f, -2.45f, 0));
-        Debug.Log(screenPos);
     }
     public void Update()
     {

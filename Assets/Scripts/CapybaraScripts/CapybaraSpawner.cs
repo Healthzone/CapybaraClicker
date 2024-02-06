@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using YG;
 using Random = UnityEngine.Random;
 
 public class CapybaraSpawner : MonoBehaviour
@@ -9,15 +9,29 @@ public class CapybaraSpawner : MonoBehaviour
 
     [SerializeField]
     private Sprite[] capybaraSprites;
-    private void Start()
+
+    private void OnEnable()
     {
+        YandexGame.GetDataEvent += InitCapybaraLevel;
         LevelMananger.OnLevelUp += SpawnNewCapybara;
-        SpawnCapybaras();
     }
 
-    private void SpawnCapybaras()
+    private void OnDisable()
     {
-        var capybaraLevel = PlayerPrefs.GetInt("CapybaraLevel", 1);
+        YandexGame.GetDataEvent -= InitCapybaraLevel;
+        LevelMananger.OnLevelUp -= SpawnNewCapybara;
+    }
+
+    private void Start()
+    {
+        if (YandexGame.SDKEnabled)
+        {
+            InitCapybaraLevel();
+        }
+    }
+
+    private void SpawnCapybaras(int capybaraLevel)
+    {
         var spawnedCapyara = 1;
         while (spawnedCapyara < capybaraLevel)
         {
@@ -25,11 +39,16 @@ public class CapybaraSpawner : MonoBehaviour
         }
     }
 
+    private void InitCapybaraLevel()
+    {
+        SpawnCapybaras(YandexGame.savesData.capybaraLevel);
+    }
+
     private void SpawnNewCapybara(int level)
     {
         if (level <= capybaraSprites.Length)
         {
-            var spawnedCapybara = Instantiate(capybaraPrefab, new Vector3(Random.Range(-6f, 3f) , Random.Range(-2f, -1f), 0), Quaternion.identity);
+            var spawnedCapybara = Instantiate(capybaraPrefab, new Vector3(Random.Range(-6f, 3f), Random.Range(-2f, -1f), 0), Quaternion.identity);
             spawnedCapybara.GetComponent<SpriteRenderer>().sprite = capybaraSprites[level - 1];
         }
     }

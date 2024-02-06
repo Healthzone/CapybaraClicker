@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace YG
 {
     [System.Serializable]
@@ -10,11 +12,12 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
 
-        // Тестовые сохранения для демо сцены
-        // Можно удалить этот код, но тогда удалите и демо (папка Example)
-        public int money = 1;                       // Можно задать полям значения по умолчанию
-        public string newPlayerName = "Hello!";
-        public bool[] openLevels = new bool[3];
+        public string scoreDataJson = "";
+        public string shopItemDataJson = "";
+        public ulong totalEarnedScore = 0;
+        public int capybaraLevel = 1;
+        public int clicksCurrent = 0;
+
 
         // Ваши сохранения
 
@@ -26,9 +29,7 @@ namespace YG
         // Вы можете выполнить какие то действия при загрузке сохранений
         public SavesYG()
         {
-            // Допустим, задать значения по умолчанию для отдельных элементов массива
 
-            openLevels[1] = true;
         }
     }
 }

@@ -1,6 +1,5 @@
+using Assets.Scripts.ShopSystem;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -21,7 +20,7 @@ public class ClickerScoring : MonoBehaviour
     }
     public void Click(BaseEventData data)
     {
-        scoreData.CurrentScore += scoreData.ClickScore;
+        scoreData.ScoreDataBase.CurrentScore += scoreData.ScoreDataBase.ClickScore;
         PlayerClicked?.Invoke();
 
         var labelTextGameObject = ClickLabelObjectPool.SharedInstance.GetPooledObject();
@@ -34,7 +33,7 @@ public class ClickerScoring : MonoBehaviour
             var worldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
             labelTextGameObject.transform.position = worldPosition;
-            var labelText = new StringBuilder("+").Append(IntToStringConverter.Int2String(scoreData.ClickScore)).ToString();
+            var labelText = new StringBuilder("+").Append(IntToStringConverter.Int2String(scoreData.ScoreDataBase.ClickScore)).ToString();
             labelTextGameObject.GetComponent<TextMeshProUGUI>().SetText(labelText);
             labelTextGameObject.GetComponent<ClickLabelFade>().DoFadeLabelText();
         }

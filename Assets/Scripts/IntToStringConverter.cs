@@ -13,10 +13,10 @@ public static class IntToStringConverter
         "трлн"
     };
 
-    public static string Int2String(BigInteger value)
+    public static string Int2String(ulong value)
     {
         int num = 0;
-        BigInteger mod;
+        ulong mod = 0;
         while (value >= 1000)
         {
             num++;

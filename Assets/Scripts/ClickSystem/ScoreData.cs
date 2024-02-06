@@ -1,39 +1,34 @@
-using System.Numerics;
 using UnityEngine;
+using YG;
 
 public class ScoreData : MonoBehaviour
 {
-    public BigInteger IdleScore;
-    public BigInteger ClickScore;
-    public BigInteger CurrentScore;
-    public BigInteger MaxScore;
+    public ScoreDataBase ScoreDataBase;
+    public ulong TotalScore;
 
-    public bool NeedToUpdateLeaderboard = false;
+    private void OnEnable() => YandexGame.GetDataEvent += InitScoreData;
 
-    private void Start()
+    private void OnDisable() => YandexGame.GetDataEvent -= InitScoreData;
+
+    private void Awake()
     {
-        var idleScoreString = PlayerPrefs.GetString("IdleScore", "1");
-        var clickScoreString = PlayerPrefs.GetString("ClickScore", "1");
-        var currentScoreString = PlayerPrefs.GetString("CurrentScore", "0");
-        var maxScoreString = PlayerPrefs.GetString("MaxScore", "0");
-
-        IdleScore = BigInteger.Parse(idleScoreString);
-        ClickScore = BigInteger.Parse(clickScoreString);
-        CurrentScore = BigInteger.Parse(currentScoreString);
-        MaxScore = BigInteger.Parse(maxScoreString);
+        ScoreDataBase = new ScoreDataBase();
+        if (YandexGame.SDKEnabled)
+        {
+            InitScoreData();
+        }
+    }
+    private void InitScoreData()
+    {
+        if (YandexGame.savesData.scoreDataJson != "")
+        {
+            ScoreDataBase = JsonUtility.FromJson<ScoreDataBase>(YandexGame.savesData.scoreDataJson);
+        }
     }
 
     public void SaveScoreData()
     {
-        PlayerPrefs.SetString("IdleScore", IdleScore.ToString());
-        PlayerPrefs.SetString("ClickScore", ClickScore.ToString());
-        PlayerPrefs.SetString("CurrentScore", CurrentScore.ToString());
-
-        if (CurrentScore > MaxScore)
-        {
-            PlayerPrefs.SetString("MaxScore", CurrentScore.ToString());
-            MaxScore = CurrentScore;
-            NeedToUpdateLeaderboard = true;
-        }
+        YandexGame.savesData.scoreDataJson = ScoreDataBase.ToString();
+        YandexGame.SaveProgress();
     }
 }

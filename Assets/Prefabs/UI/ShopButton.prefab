@@ -177,6 +177,7 @@ MonoBehaviour:
   itemBaseCost: 100
   itemShopProfit: 1
   costLabel: {fileID: 6652887405871607818}
+  shopitemData: {fileID: 0}
 --- !u!114 &2703072036987198874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +226,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 26.91, y: -23}
-  m_SizeDelta: {x: 344.31, y: 122.91}
+  m_SizeDelta: {x: 323.19, y: 122.91}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &93786938955944772
 CanvasRenderer:
@@ -434,7 +435,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 26.907013, y: 70.28053}
-  m_SizeDelta: {x: 344.31, y: 106.94}
+  m_SizeDelta: {x: 323.19, y: 106.94}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3986653078628530181
 CanvasRenderer:
@@ -569,8 +570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 327, y: 52}
-  m_SizeDelta: {x: 151.5275, y: 73.1923}
+  m_AnchoredPosition: {x: 358.68, y: 52}
+  m_SizeDelta: {x: 143.09, y: 72.92}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6744513006005176322
 CanvasRenderer:
