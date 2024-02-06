@@ -7,10 +7,10 @@ public static class IntToStringConverter
     private static List<string> nStringFormat = new List<string>()
     {
         "",
-        "K",
-        "M",
-        "B",
-        "T"
+        "עûס",
+        "לכם",
+        "לכנה",
+        "ענכם"
     };
 
     public static string Int2String(BigInteger value)

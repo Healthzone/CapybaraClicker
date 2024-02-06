@@ -1,12 +1,7 @@
-﻿using Assets.ModelsDTO;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
-using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
 
 public class UnitBehaviour : MonoBehaviour
 {
@@ -16,12 +11,10 @@ public class UnitBehaviour : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
 
-
     Camera _camera;
 
     private float _randomNumber;
     private CommandType _commandType;
-
 
     private void Start()
     {
