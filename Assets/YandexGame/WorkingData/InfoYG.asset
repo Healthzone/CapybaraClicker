@@ -26,7 +26,7 @@ MonoBehaviour:
   showFirstAd: 1
   rewardedAfterClosing: 1
   adDisplayCalls: 0
-  fullscreenAdInterval: 60
+  fullscreenAdInterval: 90
   durationOfAdSimulation: 0.5
   loadAdWithDelaySimulation: 0
   testErrorOfRewardedAdsInEditor: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
     thisPlayer:
       rank: 2
       score: 10
-  LocalizationEnable: 1
+  LocalizationEnable: 0
   callingLanguageCheck: 0
   translateMethod: 0
   domainAutoLocalization: com
@@ -326,7 +326,7 @@ MonoBehaviour:
   archivingBuild: 0
   logoImageFormat: 1
   backgroundImageFormat: 3
-  pixelRatioEnable: 0
-  pixelRatioValue: 1
+  pixelRatioEnable: 1
+  pixelRatioValue: 1.4
   loadGameRun: 0
   staticRBTInGame: 0

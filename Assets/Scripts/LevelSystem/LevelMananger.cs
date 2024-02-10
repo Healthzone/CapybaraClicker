@@ -41,7 +41,7 @@ public class LevelMananger : MonoBehaviour
         if (YandexGame.SDKEnabled)
         {
             YandexGame.savesData.clicksCurrent = clicksCurrent;
-            YandexGame.SaveProgress();
+            //YandexGame.SaveProgress();
         }
         StartCoroutine(SaveCurrentClicksAmount());
 
@@ -59,7 +59,7 @@ public class LevelMananger : MonoBehaviour
 
     private void CalculateClicksAmount()
     {
-        clickAmount = capybaraLevel * (int)(clickAmountBase * clickAmountMultiplier);
+        clickAmount = /*capybaraLevel * */(int)(clickAmountBase * clickAmountMultiplier);
     }
 
     private void SaveClicksData()

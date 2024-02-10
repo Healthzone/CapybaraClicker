@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UserScoreSaver : MonoBehaviour
@@ -19,7 +18,6 @@ public class UserScoreSaver : MonoBehaviour
     {
         yield return new WaitForSeconds(saveDelay);
         scoreData.SaveScoreData();
-        Debug.Log("UserScore saved");
         StartCoroutine(SaveUserScore());
     }
 }
