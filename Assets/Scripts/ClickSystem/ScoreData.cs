@@ -6,10 +6,6 @@ public class ScoreData : MonoBehaviour
     public ScoreDataBase ScoreDataBase;
     public ulong TotalScore;
 
-    private void OnEnable() => YandexGame.GetDataEvent += InitScoreData;
-
-    private void OnDisable() => YandexGame.GetDataEvent -= InitScoreData;
-
     private void Awake()
     {
         ScoreDataBase = new ScoreDataBase();

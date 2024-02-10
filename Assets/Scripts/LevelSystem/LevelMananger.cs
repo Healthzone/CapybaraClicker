@@ -21,11 +21,6 @@ public class LevelMananger : MonoBehaviour
 
     private LevelUI levelUI;
 
-
-    private void OnEnable() => YandexGame.GetDataEvent += InitLevelData;
-
-    private void OnDisable() => YandexGame.GetDataEvent -= InitLevelData;
-
     private void Start()
     {
         if (YandexGame.SDKEnabled)

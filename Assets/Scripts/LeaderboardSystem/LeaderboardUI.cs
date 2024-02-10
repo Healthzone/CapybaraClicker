@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class LeaderboardUI : MonoBehaviour
 {
@@ -15,5 +16,10 @@ public class LeaderboardUI : MonoBehaviour
     public void CloseLeaderboardPanel()
     {
         leaderBoardView?.SetActive(false);
+    }
+    public void ResetSaveProgress()
+    {
+        YandexGame.ResetSaveProgress();
+        YandexGame.SaveProgress();
     }
 }

@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Capybaras
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: WebGL
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: d46d17bd2daa5f243849b94659b4e459, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 67542b0030e6b1f40a2a9f6703f58717: 21300000
+    - d17194115f5502947b86b175924aa01f: 21300000
+    - ee7e3931587dc974ab650003dfcc7b87: 21300000
+    - 5df64382ab35f3c48b6bc1c86f5e2160: 21300000
+    - ae8737b253914db44917b68236749050: 21300000
+    - 8f225fa376fda2b40ab0c84667bd61f1: 21300000
+    - 47a455a4582a90945ab85ff472b71a90: 21300000
+    - c989d345f19674d469f9e7982c4568bf: 21300000
+    - 1778c48545f822a49bddea7a53e46a62: 21300000
+    - 0928bf28e4c561041a41381fc0015130: 21300000
+    - 4f2055192d57ea440943e6b6cf9b5594: 21300000
+    - 4ff8376a6ee54be4fadde265ecd98808: 21300000
+    - 0ed4a89a15a1df944b8069642d711b67: 21300000
+    - e11fa6eae91dd094d9bb6bfc6d15b8e6: 21300000
+    - e8f036cb89654fe4999cdd3652f51049: 21300000
+    - cc7af01d95537134a8575a5176aa8f64: 21300000
+    - 8660bc1d5fec71f45814a326ecff8c58: 21300000
+    - 6030782d98e6cc747a2b28e04d93e118: 21300000
+    - 90f2a39d862c1a6429a01a07996b589c: 21300000
+    - 8769aaad24b604442b562df03e90e0d8: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 67542b0030e6b1f40a2a9f6703f58717, type: 3}
+  - {fileID: 21300000, guid: d17194115f5502947b86b175924aa01f, type: 3}
+  - {fileID: 21300000, guid: ee7e3931587dc974ab650003dfcc7b87, type: 3}
+  - {fileID: 21300000, guid: 5df64382ab35f3c48b6bc1c86f5e2160, type: 3}
+  - {fileID: 21300000, guid: ae8737b253914db44917b68236749050, type: 3}
+  - {fileID: 21300000, guid: 8f225fa376fda2b40ab0c84667bd61f1, type: 3}
+  - {fileID: 21300000, guid: 47a455a4582a90945ab85ff472b71a90, type: 3}
+  - {fileID: 21300000, guid: c989d345f19674d469f9e7982c4568bf, type: 3}
+  - {fileID: 21300000, guid: 1778c48545f822a49bddea7a53e46a62, type: 3}
+  - {fileID: 21300000, guid: 0928bf28e4c561041a41381fc0015130, type: 3}
+  - {fileID: 21300000, guid: 4f2055192d57ea440943e6b6cf9b5594, type: 3}
+  - {fileID: 21300000, guid: 4ff8376a6ee54be4fadde265ecd98808, type: 3}
+  - {fileID: 21300000, guid: 0ed4a89a15a1df944b8069642d711b67, type: 3}
+  - {fileID: 21300000, guid: e11fa6eae91dd094d9bb6bfc6d15b8e6, type: 3}
+  - {fileID: 21300000, guid: e8f036cb89654fe4999cdd3652f51049, type: 3}
+  - {fileID: 21300000, guid: cc7af01d95537134a8575a5176aa8f64, type: 3}
+  - {fileID: 21300000, guid: 8660bc1d5fec71f45814a326ecff8c58, type: 3}
+  - {fileID: 21300000, guid: 6030782d98e6cc747a2b28e04d93e118, type: 3}
+  - {fileID: 21300000, guid: 90f2a39d862c1a6429a01a07996b589c, type: 3}
+  - {fileID: 21300000, guid: 8769aaad24b604442b562df03e90e0d8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Capybara8
+  - Capybara15
+  - Capybara16
+  - Capybara9
+  - Capybara10
+  - Capybara12
+  - Capybara4
+  - Capybara7
+  - Capybara11
+  - Capybara13
+  - Capybara14
+  - Capybara20
+  - Capybara6
+  - Capybara2
+  - Capybara3
+  - Capybara18
+  - Capybara1
+  - Capybara19
+  - Capybara17
+  - Capybara5
+  m_RenderDataMap: {}
+  m_Tag: Capybaras
+  m_IsVariant: 0

@@ -38,9 +38,7 @@ public class ShopItem : MonoBehaviour, IShopItem
 
     private ulong itemCost;
     private int itemLevel;
-    private void OnEnable() => YandexGame.GetDataEvent += InitShopItem;
 
-    private void OnDisable() => YandexGame.GetDataEvent -= InitShopItem;
     public void BuyItem()
     {
         OnShopItemClick?.Invoke(this);

@@ -1,11 +1,11 @@
 {
-    "idSave": 27730,
+    "idSave": 61,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "scoreDataJson": "{\"ClickScore\":1,\"CurrentScore\":105,\"IdleScore\":1}",
-    "shopItemDataJson": "",
+    "scoreDataJson": "{\"ClickScore\":25,\"CurrentScore\":114,\"IdleScore\":6}",
+    "shopItemDataJson": "{\"ClickCost\":\"244\",\"ClickLevel\":15,\"isOpenedClick\":false,\"Click2Cost\":\"289\",\"Click2Level\":3,\"isOpenedClick2\":false,\"Click3Cost\":\"\",\"Click3Level\":1,\"isOpenedClick3\":false,\"Click4Cost\":\"\",\"Click4Level\":1,\"isOpenedClick4\":false,\"Click5Cost\":\"\",\"Click5Level\":1,\"isOpenedClick5\":false,\"AutoClickCost\":\"36\",\"AutoClickLevel\":6,\"isOpenedAutoClick\":false,\"AutoClick2Cost\":\"\",\"AutoClick2Level\":1,\"isOpenedAutoClick2\":false,\"AutoClick3Cost\":\"\",\"AutoClick3Level\":1,\"isOpenedAutoClick3\":false,\"AutoClick4Cost\":\"\",\"AutoClick4Level\":1,\"isOpenedAutoClick4\":false,\"AutoClick5Cost\":\"\",\"AutoClick5Level\":1,\"isOpenedAutoClick5\":false}",
     "totalEarnedScore": 0,
     "capybaraLevel": 1,
-    "clicksCurrent": 48
+    "clicksCurrent": 332
 }

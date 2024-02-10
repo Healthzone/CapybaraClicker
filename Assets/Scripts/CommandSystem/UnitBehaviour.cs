@@ -43,27 +43,27 @@ public class UnitBehaviour : MonoBehaviour
 
     private void ListenForCommands()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.2f));
-            var heightScreenPos = UnityEngine.Random.Range(Screen.height * 0.13f, Screen.height * 0.395f);
-            Vector3 point = _camera.ScreenToWorldPoint(
-            new Vector3(widthScreenPos,heightScreenPos, _camera.nearClipPlane));
-            Debug.Log("Adding move command: " + widthScreenPos + "/" + heightScreenPos);
-            var moveCommand = new MoveCommand(point, UnityEngine.Random.Range(8f, 12f), transform, _spriteRenderer);
-            _commands.Enqueue(moveCommand);
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.2f));
+        //    var heightScreenPos = UnityEngine.Random.Range(Screen.height * 0.13f, Screen.height * 0.395f);
+        //    Vector3 point = _camera.ScreenToWorldPoint(
+        //    new Vector3(widthScreenPos,heightScreenPos, _camera.nearClipPlane));
+        //    Debug.Log("Adding move command: " + widthScreenPos + "/" + heightScreenPos);
+        //    var moveCommand = new MoveCommand(point, UnityEngine.Random.Range(8f, 12f), transform, _spriteRenderer);
+        //    _commands.Enqueue(moveCommand);
 
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            var standingCommand = new StandingCommand(UnityEngine.Random.Range(2f, 5f));
-            _commands.Enqueue(standingCommand);
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            var flipperCommand = new FlipperCommand(_spriteRenderer, UnityEngine.Random.Range(2f, 4f));
-            _commands.Enqueue(flipperCommand);
-        }
+        //}
+        //else if (Input.GetKeyDown(KeyCode.LeftShift))
+        //{
+        //    var standingCommand = new StandingCommand(UnityEngine.Random.Range(2f, 5f));
+        //    _commands.Enqueue(standingCommand);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    var flipperCommand = new FlipperCommand(_spriteRenderer, UnityEngine.Random.Range(2f, 4f));
+        //    _commands.Enqueue(flipperCommand);
+        //}
 
         StartCoroutine(UnitCommandProvider());
 
@@ -71,7 +71,7 @@ public class UnitBehaviour : MonoBehaviour
 
     private IEnumerator UnitCommandProvider()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if (_commands.Count > 6)
             yield return null;
@@ -81,16 +81,16 @@ public class UnitBehaviour : MonoBehaviour
         switch (_randomNumber)
         {
             case 0:
-                var standingCommand = new StandingCommand(UnityEngine.Random.Range(2f, 5f));
+                var standingCommand = new StandingCommand(UnityEngine.Random.Range(1f, 2f));
                 _commands.Enqueue(standingCommand);
                 break;
             case 1:
-                var flipperCommand = new FlipperCommand(_spriteRenderer, UnityEngine.Random.Range(2f, 4f));
+                var flipperCommand = new FlipperCommand(_spriteRenderer, UnityEngine.Random.Range(1f, 2f));
                 _commands.Enqueue(flipperCommand);
                 break;
             case 2:
             case 3:
-                var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.24f));
+                var widthScreenPos = UnityEngine.Random.Range(Screen.width * 0.105f, Screen.width - (Screen.width * 0.26f));
                 var heightScreenPos = UnityEngine.Random.Range(Screen.height * 0.13f, Screen.height * 0.395f);
                 Vector3 point = _camera.ScreenToWorldPoint(
                 new Vector3(widthScreenPos, heightScreenPos, _camera.nearClipPlane));
@@ -99,7 +99,7 @@ public class UnitBehaviour : MonoBehaviour
                 break;
 
             default:
-                var standingCommand1 = new StandingCommand(UnityEngine.Random.Range(2f, 5f));
+                var standingCommand1 = new StandingCommand(UnityEngine.Random.Range(1f, 2f));
                 _commands.Enqueue(standingCommand1);
                 break;
         }

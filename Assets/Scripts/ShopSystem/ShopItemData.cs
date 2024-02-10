@@ -9,10 +9,7 @@ public class ShopItemData : MonoBehaviour
     private void OnEnable()
     {
         shopItemDataBase = new ShopItemDataBase();
-        YandexGame.GetDataEvent += InitItemShopData;
     }
-
-    private void OnDisable() => YandexGame.GetDataEvent -= InitItemShopData;
 
     public void Awake()
     {

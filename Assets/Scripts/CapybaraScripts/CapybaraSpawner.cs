@@ -12,13 +12,11 @@ public class CapybaraSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        YandexGame.GetDataEvent += InitCapybaraLevel;
         LevelMananger.OnLevelUp += SpawnNewCapybara;
     }
 
     private void OnDisable()
     {
-        YandexGame.GetDataEvent -= InitCapybaraLevel;
         LevelMananger.OnLevelUp -= SpawnNewCapybara;
     }
 
@@ -32,7 +30,7 @@ public class CapybaraSpawner : MonoBehaviour
 
     private void SpawnCapybaras(int capybaraLevel)
     {
-        var spawnedCapyara = 1;
+        var spawnedCapyara = 0;
         while (spawnedCapyara < capybaraLevel)
         {
             SpawnNewCapybara(++spawnedCapyara);
