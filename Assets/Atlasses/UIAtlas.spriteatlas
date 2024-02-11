@@ -39,7 +39,7 @@ SpriteAtlas:
       padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
+      enableRotation: 0
       enableTightPacking: 1
       enableAlphaDilation: 1
     secondaryTextureSettings: {}
@@ -50,35 +50,65 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
-    - b97852e1d9b120a4e9f55999afa53a9f: 21300000
+    - bd330761537c753488743adfeb250e0d: 21300000
+    - cc11e3a1e6c958148a00574de756d10a: 21300000
+    - 0429de53a3814524081977599e470e79: 21300000
     - 03a52e934f88f4a699b498a51573c186: 21300000
-    - 230af5f3b6d6ad44dacaec7b12cc304d: 21300000
     - 4c95714486ef949438634bdbd26b8887: 21300000
+    - 35deed54d3f6e9e41b4133e7353d2a79: 21300000
     - 2feaafe4e67104e6fbd6232e8f31f297: 21300000
     - 8204a346530a44e11a8f7a16aed74e85: 21300000
+    - 8fdc123916403d444a96d0a5b61edb9b: 21300000
+    - f04f66d915e0eca40a3b5f0ccdefafb0: 21300000
+    - 166fa40a3368b4c4f9f2b366724c6ca1: 21300000
+    - cd9234ab5729b0a45840362b54728431: 21300000
     - 1eb6beec379450b49a514823b6a29e1f: 21300000
+    - b4a6902d9799b2244ac6c24747be5854: 21300000
+    - 35dfa06da6c10474599725137b10befd: 21300000
+    - a0e748dd60321594f9f8bc6e56d33c4e: 21300000
     - 804461bef59b141dba258fc997c8ca15: 21300000
+    - 1808246fc42522c4ea86474689c01cb3: 21300000
     - 1c003fff2a78f4a4fa6e0a7be1fb3cbd: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: b97852e1d9b120a4e9f55999afa53a9f, type: 3}
+  - {fileID: 21300000, guid: bd330761537c753488743adfeb250e0d, type: 3}
+  - {fileID: 21300000, guid: cc11e3a1e6c958148a00574de756d10a, type: 3}
+  - {fileID: 21300000, guid: 0429de53a3814524081977599e470e79, type: 3}
   - {fileID: 21300000, guid: 03a52e934f88f4a699b498a51573c186, type: 3}
-  - {fileID: 21300000, guid: 230af5f3b6d6ad44dacaec7b12cc304d, type: 3}
   - {fileID: 21300000, guid: 4c95714486ef949438634bdbd26b8887, type: 3}
+  - {fileID: 21300000, guid: 35deed54d3f6e9e41b4133e7353d2a79, type: 3}
   - {fileID: 21300000, guid: 2feaafe4e67104e6fbd6232e8f31f297, type: 3}
   - {fileID: 21300000, guid: 8204a346530a44e11a8f7a16aed74e85, type: 3}
+  - {fileID: 21300000, guid: 8fdc123916403d444a96d0a5b61edb9b, type: 3}
+  - {fileID: 21300000, guid: f04f66d915e0eca40a3b5f0ccdefafb0, type: 3}
+  - {fileID: 21300000, guid: 166fa40a3368b4c4f9f2b366724c6ca1, type: 3}
+  - {fileID: 21300000, guid: cd9234ab5729b0a45840362b54728431, type: 3}
   - {fileID: 21300000, guid: 1eb6beec379450b49a514823b6a29e1f, type: 3}
+  - {fileID: 21300000, guid: b4a6902d9799b2244ac6c24747be5854, type: 3}
+  - {fileID: 21300000, guid: 35dfa06da6c10474599725137b10befd, type: 3}
+  - {fileID: 21300000, guid: a0e748dd60321594f9f8bc6e56d33c4e, type: 3}
   - {fileID: 21300000, guid: 804461bef59b141dba258fc997c8ca15, type: 3}
+  - {fileID: 21300000, guid: 1808246fc42522c4ea86474689c01cb3, type: 3}
   - {fileID: 21300000, guid: 1c003fff2a78f4a4fa6e0a7be1fb3cbd, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Pointer
+  - OrangeCrate
+  - House
+  - Orange
   - ribbon_bg_yellow
-  - HourGlass
   - user_level_bar_blue
+  - Village
   - popup_bg_purple
   - user_level_bg
+  - Galaxy
+  - SomeOranges
+  - Town
+  - Planet
   - Orange
+  - TruckOrange
+  - Factory
+  - GigaFactory
   - button_yellow
+  - Country
   - user_level_bar_bg
   m_RenderDataMap: {}
   m_Tag: UIAtlas

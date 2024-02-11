@@ -24,6 +24,10 @@ namespace Assets.Scripts.ShopSystem
         public int Click5Level = 1;
         public bool isOpenedClick5 = false;
 
+        public string Click6Cost = "";
+        public int Click6Level = 1;
+        public bool isOpenedClick6 = false;
+
         public string AutoClickCost = "";
         public int AutoClickLevel = 1;
         public bool isOpenedAutoClick = false;
@@ -43,6 +47,10 @@ namespace Assets.Scripts.ShopSystem
         public string AutoClick5Cost = "";
         public int AutoClick5Level = 1;
         public bool isOpenedAutoClick5 = false;
+
+        public string AutoClick6Cost = "";
+        public int AutoClick6Level = 1;
+        public bool isOpenedAutoClick6 = false;
 
         public override string ToString()
         {
