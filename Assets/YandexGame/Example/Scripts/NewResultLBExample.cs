@@ -19,7 +19,7 @@ namespace YG.Example
         public void NewScore()
         {
             // Статический метод добавление нового рекорда
-            YandexGame.NewLeaderboardScores(leaderboardYG.nameLB, int.Parse(scoreLbInputField.text));
+            YandexGame.NewLeaderboardScores(leaderboardYG.nameLB, ulong.Parse(scoreLbInputField.text));
 
             // Метод добавление нового рекорда обращением к компоненту LeaderboardYG
             // leaderboardYG.NewScore(int.Parse(scoreLbInputField.text));

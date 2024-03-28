@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class ClickerScoring : MonoBehaviour
 {
-    public static event Action PlayerClicked; 
+    public static Action PlayerClicked;
 
     [SerializeField]
     private Camera mainCamera;
@@ -20,11 +20,17 @@ public class ClickerScoring : MonoBehaviour
     }
     public void Click(BaseEventData data)
     {
+        ProcessClick(data);
+    }
+
+    private void ProcessClick(BaseEventData data)
+    {
         scoreData.ScoreDataBase.CurrentScore += scoreData.ScoreDataBase.ClickScore;
+        scoreData.TotalScore += scoreData.ScoreDataBase.ClickScore;
         PlayerClicked?.Invoke();
 
         var labelTextGameObject = ClickLabelObjectPool.SharedInstance.GetPooledObject();
-        if(labelTextGameObject != null )
+        if (labelTextGameObject != null)
         {
             var pointerEventData = (PointerEventData)data;
             Vector3 screenPosition = new Vector3(pointerEventData.position.x,

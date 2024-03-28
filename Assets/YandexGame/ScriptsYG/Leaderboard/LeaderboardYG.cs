@@ -224,7 +224,7 @@ namespace YG
             YandexGame.GetLeaderboard(nameLB, maxQuantityPlayers, quantityTop, quantityAround, photoSize);
         }
 
-        public void NewScore(int score) => YandexGame.NewLeaderboardScores(nameLB, score);
+        public void NewScore(ulong score) => YandexGame.NewLeaderboardScores(nameLB, score);
 
         public void NewScoreTimeConvert(float score) => YandexGame.NewLBScoreTimeConvert(nameLB, score);
 

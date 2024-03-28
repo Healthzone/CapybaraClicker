@@ -1,2 +1,2 @@
 Build path: D:/UnityProjects/CapybaraClicker/Builds
-Build number: 149
+Build number: 152

@@ -334,9 +334,9 @@ namespace YG
 
         #region Leaderboard
         [DllImport("__Internal")]
-        private static extern void SetLeaderboardScores(string nameLB, int score);
+        private static extern void SetLeaderboardScores(string nameLB, ulong score);
 
-        public static void NewLeaderboardScores(string nameLB, int score)
+        public static void NewLeaderboardScores(string nameLB, ulong score)
         {
             if (Instance.infoYG.leaderboardEnable && auth)
             {
@@ -361,7 +361,7 @@ namespace YG
                     playerName == "anonymous")
                     return;
 
-                int result;
+                ulong result;
                 int indexComma = secondsScore.ToString().IndexOf(",");
 
                 if (secondsScore < 1)
@@ -371,7 +371,7 @@ namespace YG
                 }
                 else if (indexComma <= 0)
                 {
-                    result = (int)(secondsScore);
+                    result = (ulong)(secondsScore);
                 }
                 else
                 {
@@ -382,7 +382,7 @@ namespace YG
                     else if (milSec.Length == 2) milSec += "0";
                     else if (milSec.Length == 1) milSec += "00";
                     rec = sec + milSec;
-                    result = int.Parse(rec);
+                    result = ulong.Parse(rec);
                 }
 
                 NewLeaderboardScores(nameLB, result);

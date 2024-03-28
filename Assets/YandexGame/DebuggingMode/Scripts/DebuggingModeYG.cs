@@ -204,7 +204,7 @@ namespace YG
         public void NewScoreLB()
         {
             YandexGame.NewLeaderboardScores(leaderboard.leaderboardYG.nameLB,
-                int.Parse(leaderboard.scoreLbInputField.text));
+                ulong.Parse(leaderboard.scoreLbInputField.text));
         }
 
         public void NewScoreLBTimeConvert()

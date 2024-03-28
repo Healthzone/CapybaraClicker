@@ -20,6 +20,7 @@ public class LeaderboardSaver : MonoBehaviour
     {
         yield return new WaitForSeconds(saveDelay);
         YandexGame.savesData.totalEarnedScore = scoreData.TotalScore;
+        YandexGame.NewLeaderboardScores("leaders", scoreData.TotalScore);
         YandexGame.SaveProgress();
         StartCoroutine(SaveTotalEarnedScore());
     }

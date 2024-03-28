@@ -1,11 +1,11 @@
 {
-    "idSave": 72,
+    "idSave": 369,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "scoreDataJson": "{\"ClickScore\":1,\"CurrentScore\":14,\"IdleScore\":1}",
-    "shopItemDataJson": "{\"ClickCost\":\"244\",\"ClickLevel\":15,\"isOpenedClick\":false,\"Click2Cost\":\"289\",\"Click2Level\":3,\"isOpenedClick2\":false,\"Click3Cost\":\"\",\"Click3Level\":1,\"isOpenedClick3\":false,\"Click4Cost\":\"\",\"Click4Level\":1,\"isOpenedClick4\":false,\"Click5Cost\":\"\",\"Click5Level\":1,\"isOpenedClick5\":false,\"AutoClickCost\":\"36\",\"AutoClickLevel\":6,\"isOpenedAutoClick\":false,\"AutoClick2Cost\":\"\",\"AutoClick2Level\":1,\"isOpenedAutoClick2\":false,\"AutoClick3Cost\":\"\",\"AutoClick3Level\":1,\"isOpenedAutoClick3\":false,\"AutoClick4Cost\":\"\",\"AutoClick4Level\":1,\"isOpenedAutoClick4\":false,\"AutoClick5Cost\":\"\",\"AutoClick5Level\":1,\"isOpenedAutoClick5\":false}",
+    "scoreDataJson": "{\"ClickScore\":1,\"CurrentScore\":24,\"IdleScore\":1}",
+    "shopItemDataJson": "{\"ClickCost\":\"\",\"ClickLevel\":1,\"isOpenedClick\":false,\"Click2Cost\":\"\",\"Click2Level\":1,\"isOpenedClick2\":false,\"Click3Cost\":\"\",\"Click3Level\":1,\"isOpenedClick3\":false,\"Click4Cost\":\"\",\"Click4Level\":1,\"isOpenedClick4\":false,\"Click5Cost\":\"\",\"Click5Level\":1,\"isOpenedClick5\":false,\"Click6Cost\":\"\",\"Click6Level\":1,\"isOpenedClick6\":false,\"AutoClickCost\":\"32\",\"AutoClickLevel\":5,\"isOpenedAutoClick\":false,\"AutoClick2Cost\":\"\",\"AutoClick2Level\":1,\"isOpenedAutoClick2\":false,\"AutoClick3Cost\":\"\",\"AutoClick3Level\":1,\"isOpenedAutoClick3\":false,\"AutoClick4Cost\":\"\",\"AutoClick4Level\":1,\"isOpenedAutoClick4\":false,\"AutoClick5Cost\":\"\",\"AutoClick5Level\":1,\"isOpenedAutoClick5\":false,\"AutoClick6Cost\":\"\",\"AutoClick6Level\":1,\"isOpenedAutoClick6\":false}",
     "totalEarnedScore": 0,
-    "capybaraLevel": 1,
-    "clicksCurrent": 332
+    "capybaraLevel": 2,
+    "clicksCurrent": 174
 }
